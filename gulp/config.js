@@ -1,6 +1,9 @@
 var root  = "./",
-    jsSrc = "src/js/",
-    jsDst = "dist/js/";
+    src   = root + "src/",
+    dist  = root + "dist/",
+    jsSrc = src + "js/",
+    jsDst = dist + "js/",
+    node  = root + "node_modules/";
 
 module.exports = {
     "root":      root,
@@ -11,6 +14,10 @@ module.exports = {
     "readMeDst": "README.md",
     "jsSrc":     jsSrc,
     "jsDst":     jsDst,
+    "vendor":    {
+        "bootstrap":   node + "bootstrap/",
+        "fontAwesome": node + "font-awesome/"
+    },
     "webServer": {
         "server": {
             "livereload": true,
@@ -21,23 +28,11 @@ module.exports = {
     },
     browserify:  {
         bundleConfig: {
-            entries:    root + jsSrc + "main.js",
-            dest:       root + jsDst,
+            entries:    jsSrc + "main.js",
+            dest:       jsDst,
             outputName: "bundle.js",
             // list of modules to make require-able externally
-            require: ["jquery"]
-            // See https://github.com/greypants/gulp-starter/issues/87 for note about
-            // why this is 'backbone/node_modules/underscore' and not 'underscore'
-            //
-            // list of externally available modules to exclude from the bundle
-            // external:   ['jquery', 'underscore']
-        },
-        workerConfig: {
-            entries:    root + jsSrc + "workercjs.js",
-            dest:       root + jsDst,
-            outputName: "worker.js"
-            // list of modules to make require-able externally
-            //require: ["jquery"]
+            require:    ["jquery"]
             // See https://github.com/greypants/gulp-starter/issues/87 for note about
             // why this is 'backbone/node_modules/underscore' and not 'underscore'
             //

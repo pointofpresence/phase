@@ -7,7 +7,7 @@ gulp.task("less", function () {
     $.mkdirp(distCss);
 
     return gulp
-        .src(srcLess + "/main.less")
+        .src(srcLess + "/clean-blog.less")
         .pipe($.less())
         .pipe($.autoprefixer({
             browsers: [
