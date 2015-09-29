@@ -998,4 +998,4 @@ module.exports = (function () {
             $(this).removeClass("floating-label-form-group-with-focus");
         });
     });
-});
+})();

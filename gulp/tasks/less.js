@@ -8,6 +8,7 @@ gulp.task("less", function () {
 
     return gulp
         .src(srcLess + "/clean-blog.less")
+        .pipe(!isProd ? $.sourcemaps.init({loadMaps: true}) : $.util.noop())
         .pipe($.less())
         .pipe($.autoprefixer({
             browsers: [
@@ -23,5 +24,7 @@ gulp.task("less", function () {
         }))
         .pipe(isProd ? $.csso() : $.util.noop())
         .pipe($.header(banner, {pkg: pkg}))
+        .pipe(!isProd ? $.sourcemaps.write() : $.util.noop())
+        .pipe($.size({title: "CSS"}))
         .pipe($.out(distCss + "/app.css"));
 });

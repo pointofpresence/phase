@@ -3,11 +3,10 @@
 global.jQuery = require("jquery");
 global.$      = jQuery;
 
-var WizardView = require("./views/Wizard"),
-    bootstrap  = require("bootstrap");
+var //WizardView = require("./views/Wizard"),
+    bootstrap = require("bootstrap");
 
-//    "share",
-require("./lib/Fileinput");
+require("./lib/Navigation");
 
 $(function () {
     // # fix
@@ -17,8 +16,8 @@ $(function () {
 
     // bootstrap
     $('[data-toggle="tooltip"]').tooltip();
-
-    $("#wizard").show();
-
-    new WizardView;
+    //
+    //$("#wizard").show();
+    //
+    //new WizardView;
 });

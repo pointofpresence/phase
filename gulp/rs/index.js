@@ -62,7 +62,10 @@ module.exports = {
             .on("time", this.getTime)
             .pipe(source(bundleConfig.outputName))
             .pipe(buffer())
+            .pipe(!isProd ? $.sourcemaps.init({loadMaps: true}) : $.util.noop())
             .pipe(isProd ? $.uglify({mangle: false}) : $.util.noop())
+            .pipe(!isProd ? $.sourcemaps.write() : $.util.noop())
+            .pipe($.size({title: "JS"}))
             .pipe(gulp.dest(bundleConfig.dest));
     },
 
