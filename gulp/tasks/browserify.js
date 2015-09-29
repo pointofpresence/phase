@@ -12,7 +12,7 @@ gulp.task("browserify", function () {
         bundleConfig = _.omit(bundleConfig, ["external", "require"]);
     }
 
-    var bundler   = browserify(bundleConfig);
+    var bundler = browserify(bundleConfig);
 
     if (!isProd) {
         bundler = watchify(bundler);
