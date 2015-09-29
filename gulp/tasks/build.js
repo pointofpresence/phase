@@ -1,5 +1,5 @@
 "use strict";
 
 gulp.task("build", function () {
-    return $.runSequence(["images", "browserify", "less", "jade", "readme"]);
+    return $.runSequence(["fonts", "images", "browserify", "less", "jade", "readme"]);
 });
