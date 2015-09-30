@@ -3,7 +3,8 @@
 global.jQuery = require("jquery");
 global.$      = jQuery;
 
-var //WizardView = require("./views/Wizard"),
+var Backbone = require("backbone"),
+    Workspace = require("./Workspace"),
     bootstrap = require("bootstrap");
 
 require("./lib/Navigation");
@@ -16,8 +17,7 @@ $(function () {
 
     // bootstrap
     $('[data-toggle="tooltip"]').tooltip();
-    //
-    //$("#wizard").show();
-    //
-    //new WizardView;
+
+    new Workspace();
+    Backbone.history.start();
 });
