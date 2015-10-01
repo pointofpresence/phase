@@ -5,11 +5,12 @@ var Backbone = require("backbone"),
 
 module.exports = Backbone.Router.extend({
     routes: {
-        "":           "home",
-        "about":      "about",
-        "contact":    "contact",
-        "post":       "list",
-        "post/:slug": "post"
+        "":            "home",
+        "!home":       "home",
+        "!about":      "about",
+        "!contact":    "contact",
+        "!post":       "list",
+        "!post/:slug": "post"
     },
 
     initialize: function () {
@@ -21,11 +22,12 @@ module.exports = Backbone.Router.extend({
     },
 
     about: function () {
-        console.log("::about")
         this.content.render("about");
     },
 
     contact: function () {
+        this.content.render("contact");
+        require("./lib/Validation");
     },
 
     list: function () {

@@ -1,8 +1,8 @@
 "use strict";
 
 gulp.task("less", function () {
-    var distCss = config.root + config.css,
-        srcLess = config.root + config.less;
+    var distCss =config.css,
+        srcLess = config.less;
 
     $.mkdirp(distCss);
 

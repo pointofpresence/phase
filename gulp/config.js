@@ -7,14 +7,16 @@ var root  = "./",
 
 module.exports = {
     "root":      root,
-    "jade":      "src/jade/",
-    "less":      "src/less/",
-    "css":       "dist/css/",
+    "jade":      src + "jade/",
+    "less":      src + "less/",
+    "css":       dist + "css/",
     "fonts":     dist + "fonts/",
     "readMeSrc": "src/README.md",
     "readMeDst": "README.md",
     "jsSrc":     jsSrc,
     "jsDst":     jsDst,
+    "imgSrc":    src + "images/",
+    "imgDst":    dist + "images/",
     "vendor":    {
         "bootstrap":   node + "bootstrap/",
         "fontAwesome": node + "font-awesome/"
