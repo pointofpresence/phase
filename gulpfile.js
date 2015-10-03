@@ -15,7 +15,6 @@ global.banner = [
     ' * Copyright (c) <%= new Date().getFullYear() %> <%= pkg.author %>',
     ' * <%= pkg.title %> (<%= pkg.name %>) - <%= pkg.description %>',
     ' * @version v<%= pkg.version %>',
-    ' * @build <%= pkg.lastBuildDateHuman %>',
     ' * @link <%= pkg.repository %>',
     ' * @license <%= pkg.license %>',
     ' */',

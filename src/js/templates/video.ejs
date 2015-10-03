@@ -1,0 +1,57 @@
+<!-- Page Header -->
+<header class="intro-header header-video">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="page-heading">
+                    <h1>Видео</h1>
+                    <hr class="small">
+                    <div class="subheading"><span>Общая информация и обучение</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            <% data.each(function(model, i) { %>
+            <div class="post-preview">
+                <h2 class="post-title">
+                    <%= model.get("n") %>
+                </h2>
+
+                <% if(model.get("d")) { %>
+                <p class="post-subtitle">
+                    <%= model.get("d") %>
+                </p>
+                <% } %>
+
+                <% if(_.isArray(model.get("v"))) { %>
+                <% _.each(model.get("v"), function(v) { %>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <%= v %>
+                </div>
+                <% }); %>
+                <% } else { %>
+                <div class="embed-responsive embed-responsive-16by9">
+                    <%= model.get("v") %>
+                </div>
+                <% } %>
+            </div>
+            <% if(i != data.length - 1) { %>
+            <hr>
+            <% } %>
+            <% }); %>
+
+            <!-- Pager -->
+            <ul class="pager">
+                <li class="next">
+                    <a href="#">Older Posts &rarr;</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

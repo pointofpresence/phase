@@ -9,8 +9,7 @@ gulp.task("readme", function () {
             author:             pkg.author || "Unknown",
             repository:         pkg.repository || "Unknown",
             version:            pkg.version || "Unknown",
-            lastBuildDateHuman: pkg.lastBuildDateHuman || "Unknown"
-
+            license:            pkg.license || "Unknown"
         }))
         .pipe($.out(config.root + config.readMeDst));
 });

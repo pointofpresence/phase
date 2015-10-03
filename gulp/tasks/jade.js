@@ -16,11 +16,11 @@ gulp.task("jade", function () {
             locals: {
                 name:               pkg.name || "Unknown",
                 title:              pkg.title || "Unknown",
-                description:        pkg.description || "Unknown",
+                description:        pkg.appDescription || "Unknown",
+                keywords:           pkg.appKeywords || "Unknown",
                 author:             pkg.author || "Unknown",
                 repository:         pkg.repository || "Unknown",
-                version:            pkg.version || "Unknown",
-                lastBuildDateHuman: pkg.lastBuildDateHuman || "Unknown"
+                version:            pkg.version || "Unknown"
             }
         }))
         .on("error", $.notify.onError({

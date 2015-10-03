@@ -8,14 +8,9 @@ Backbone.$ = jQuery;
 module.exports = Backbone.View.extend({
     el: "#content",
 
-    initialize: function () {
-    },
-
-    events: {},
-
     render: function (template, data) {
         console.log(template)
-        this.$el.html(templates[template](data));
+        this.$el.html(templates[template]({data: data}));
         return this;
     }
 });

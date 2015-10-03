@@ -3,14 +3,14 @@
 global.jQuery = require("jquery");
 global.$      = jQuery;
 
-var Backbone = require("backbone"),
+var Backbone  = require("backbone"),
     Workspace = require("./Workspace"),
     bootstrap = require("bootstrap");
 
 require("./lib/Navigation");
 
 $(function () {
-    // # fix
+    // fixes
     $(document).on("click", "a[href=#]", function (e) {
         e.preventDefault();
     });
@@ -18,6 +18,11 @@ $(function () {
     // bootstrap
     $('[data-toggle="tooltip"]').tooltip();
 
-    new Workspace();
+    $(document).on("click", "a[data-toggle=\"tab\"]", function (e) {
+        e.preventDefault();
+        $(this).tab("show");
+    });
+
+    new Workspace;
     Backbone.history.start();
 });

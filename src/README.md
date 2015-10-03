@@ -3,6 +3,10 @@
 
 Author: <%= author %>
 
-Last build date: <%= lastBuildDateHuman %>
+Repository: <%= repository %>
+
+License: <%= license %>
 
 <%= description %>
+
+Copyright (c) <%= new Date().getFullYear() %>

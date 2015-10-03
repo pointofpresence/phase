@@ -9,8 +9,10 @@ module.exports = Backbone.Router.extend({
         "!home":       "home",
         "!about":      "about",
         "!contact":    "contact",
-        "!post":       "list",
-        "!post/:slug": "post"
+        "!video":      "video",
+        "!post/:slug": "post",
+
+        '*notFound': 'notFound'
     },
 
     initialize: function () {
@@ -30,9 +32,21 @@ module.exports = Backbone.Router.extend({
         require("./lib/Validation");
     },
 
-    list: function () {
+    video: function () {
+        var VideoCollection = require("./collections/Video"),
+            collection      = new VideoCollection();
+
+        collection.fetch({
+            success: (function (_collection) {
+                this.content.render("video", _collection);
+            }).bind(this)
+        });
     },
 
     post: function (slug) {
+    },
+
+    notFound: function () {
+        this.content.render("notfound");
     }
 });
