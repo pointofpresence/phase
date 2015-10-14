@@ -25,8 +25,8 @@ require("require-dir")("./gulp/tasks", {recurse: true});
 
 gulp.task("default", function () {
     if (!isProd) {
-        return $.runSequence("build", ["watch", "webServer"]);
+        return $.runSequence("build", ["watch" /*, "webServer"*/]);
     }
 
-    return $.runSequence("build", "webServer");
+    return $.runSequence("build" /*, "webServer"*/);
 });

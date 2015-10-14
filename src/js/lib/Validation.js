@@ -194,7 +194,7 @@ module.exports = (function () {
                             //                                                     EMAIL
                             // ---------------------------------------------------------
                             if ($this.attr("type") !== undefined && $this.attr("type").toLowerCase() === "email") {
-                                message = "Not a valid email address<!-- data-validator-validemail-message to override -->";
+                                message = "Неправильный формат адреса<!-- data-validator-validemail-message to override -->";
                                 if ($this.data("validationValidemailMessage")) {
                                     message = $this.data("validationValidemailMessage");
                                 } else if ($this.data("validationEmailMessage")) {
@@ -956,7 +956,7 @@ module.exports = (function () {
                         $('#success > .alert-success').html("<button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;")
                             .append("</button>");
                         $('#success > .alert-success')
-                            .append("<strong>Your message has been sent. </strong>");
+                            .append("<strong>Ваше сообщение успешно отправлено. Спасибо!</strong>");
                         $('#success > .alert-success')
                             .append('</div>');
 
