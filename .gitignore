@@ -111,3 +111,4 @@ $RECYCLE.BIN/
 # Linux trash folder which might appear on any partition or disk
 .Trash-*
 
+/api/cache/677740db72dcf54fbe2eeb0ff652bf7b
