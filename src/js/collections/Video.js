@@ -5,5 +5,5 @@ var Backbone   = require("backbone"),
 
 module.exports = Backbone.Collection.extend({
     model: VideoModel,
-    url:   "/api/video.json"
+    url:   "/api/videos"
 });

@@ -1,0 +1,37 @@
+{
+  "name": "phase-admin",
+  "version": "0.0.1",
+  "description": "Phase Admin",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": "",
+  "author": "pointofpresence",
+  "license": "",
+  "devDependencies": {
+    "backbone": "^1.2.3",
+    "chalk": "^1.0.0",
+    "dateformat": "^1.0.11",
+    "gulp": "^3.8.11",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-concat": "^2.5.2",
+    "gulp-csso": "^1.0.0",
+    "gulp-ejsmin": "0.0.1",
+    "gulp-header": "^1.2.2",
+    "gulp-jade": "^1.0.1",
+    "gulp-less": "^3.0.3",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-minify-html": "^1.0.3",
+    "gulp-notify": "^2.2.0",
+    "gulp-out": "0.0.1",
+    "gulp-replace": "^0.5.3",
+    "gulp-size": "^2.0.0",
+    "gulp-sourcemaps": "^1.6.0",
+    "gulp-uglify": "^1.2.0",
+    "gulp-util": "^3.0.5",
+    "mkdirp": "^0.5.1",
+    "startbootstrap-sb-admin-2": "^1.0.7",
+    "summernote": "^0.6.16",
+    "underscore": "^1.8.3"
+  }
+}

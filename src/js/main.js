@@ -24,5 +24,5 @@ $(function () {
     });
 
     new Workspace;
-    Backbone.history.start();
+    Backbone.history.start({pushState: true});
 });

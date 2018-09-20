@@ -5,14 +5,14 @@ var Backbone = require("backbone"),
 
 module.exports = Backbone.Router.extend({
     routes: {
-        "":            "home",
-        "!home":       "home",
-        "!about":      "about",
-        "!contact":    "contact",
-        "!video":      "video",
-        "!post/:slug": "post",
+        "":         "home",
+        "home":     "home",
+        "about":    "about",
+        "contact":  "contact",
+        "video":    "video",
+        "post/:id": "post",
 
-        '*notFound': 'notFound'
+        '*notFound': "notFound"
     },
 
     initialize: function () {
@@ -20,7 +20,14 @@ module.exports = Backbone.Router.extend({
     },
 
     home: function () {
-        this.content.render("home");
+        var PostCollection = require("./collections/Post"),
+            collection     = new PostCollection();
+
+        collection.fetch({
+            success: (function (_collection) {
+                this.content.render("home", _collection);
+            }).bind(this)
+        });
     },
 
     about: function () {
@@ -43,7 +50,15 @@ module.exports = Backbone.Router.extend({
         });
     },
 
-    post: function (slug) {
+    post: function (id) {
+        var PostModel = require("./models/Post"),
+            model     = new PostModel({id: id});
+
+        model.fetch({
+            success: (function (_model) {
+                this.content.render("post", _model);
+            }).bind(this)
+        });
     },
 
     notFound: function () {

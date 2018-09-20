@@ -20,24 +20,26 @@
             <% data.each(function(model, i) { %>
             <div class="post-preview">
                 <h2 class="post-title">
-                    <%= model.get("n") %>
+                    <%= model.get("title") %>
                 </h2>
 
-                <% if(model.get("d")) { %>
-                <p class="post-subtitle">
-                    <%= model.get("d") %>
-                </p>
+                <p class="post-meta"><%= model.get("created") %></p>
+
+                <% if(model.get("teaser")) { %>
+                <div class="post-subtitle">
+                    <%= model.get("teaser") %>
+                </div>
                 <% } %>
 
-                <% if(_.isArray(model.get("v"))) { %>
-                <% _.each(model.get("v"), function(v) { %>
+                <% if(_.isArray(model.get("list"))) { %>
+                <% _.each(model.get("list"), function(v) { %>
                 <div class="embed-responsive embed-responsive-16by9">
                     <%= v %>
                 </div>
                 <% }); %>
                 <% } else { %>
                 <div class="embed-responsive embed-responsive-16by9">
-                    <%= model.get("v") %>
+                    <%= model.get("list") %>
                 </div>
                 <% } %>
             </div>
@@ -45,13 +47,6 @@
             <hr>
             <% } %>
             <% }); %>
-
-            <!-- Pager -->
-            <ul class="pager">
-                <li class="next">
-                    <a href="#">Older Posts &rarr;</a>
-                </li>
-            </ul>
         </div>
     </div>
 </div>
